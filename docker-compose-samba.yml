@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+
+  samba:
+    build: ./samba
+    tty: true
+    networks:
+      - kind-network
+    volumes:
+      - ./storage:/data/sambashare
+
+networks:
+  kind-network:
+    name: kind
+    external: true
+
